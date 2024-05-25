@@ -21,18 +21,27 @@ public class WordLengthAnalysis {
         List<String> words2 = Arrays.asList(text2.split(" "));
         words2 = words2.stream().map(x -> x.replaceAll("[^a-zA-Z]", "")).toList();
 
+        ArrayList<String> searchWords = new ArrayList<String>();
+        searchWords.add("Lorem");
+        searchWords.add("is");
+        searchWords.add("it");
+        searchWords.add("years");
+
         CommonWordTask.THRESHOLD = 5;
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        CommonWordTask task = new CommonWordTask(new ArrayList<String>(words), new ArrayList<String>(words2));
+        CommonWordTask task = new CommonWordTask(new ArrayList<String>(words), new ArrayList<String>(searchWords));
         List<String> wordLengthFrequencies = forkJoinPool.invoke(task);
 
+        ForkJoinPool forkJoinPool2 = new ForkJoinPool();
+        CommonWordTask task2 = new CommonWordTask(new ArrayList<String>(words2), new ArrayList<String>(searchWords));
+        List<String> wordLengthFrequencies2 = forkJoinPool2.invoke(task2);
+
         wordLengthFrequencies.forEach(x -> {
-            System.out.println("Similar word: " + x);
+            System.out.println("Contain word: " + x);
         });
         System.out.println("\n\n\n");
-        List<String> result = words.stream().filter(words2::contains).distinct().toList();
-        result.forEach(x -> {
-            System.out.println("Similar word: " + x);
+        wordLengthFrequencies2.forEach(x -> {
+            System.out.println("Contain word: " + x);
         });
     }
 
