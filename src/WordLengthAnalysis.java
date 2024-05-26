@@ -39,7 +39,7 @@ public class WordLengthAnalysis {
         wordLengthFrequencies.forEach(x -> {
             System.out.println("Contain word: " + x);
         });
-        System.out.println("\n\n\n");
+        System.out.println("\n\n");
         wordLengthFrequencies2.forEach(x -> {
             System.out.println("Contain word: " + x);
         });
