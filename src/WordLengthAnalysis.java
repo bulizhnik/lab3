@@ -26,7 +26,7 @@ public class WordLengthAnalysis {
         long endTime = System.nanoTime();
 
         long duration = endTime - startTime;
-        System.out.println("Execution time in nanoseconds: " + duration);
+        System.out.println("Execution time in nanoseconds single thread: " + duration);
 
         long startTime2 = System.nanoTime();
 
@@ -35,7 +35,7 @@ public class WordLengthAnalysis {
         long endTime2 = System.nanoTime();
 
         long duration2 = endTime2 - startTime2;
-        System.out.println("Execution time in nanoseconds: " + duration2);
+        System.out.println("Execution time in nanoseconds multi thread: " + duration2);
 
         wordLengthFrequencies.forEach((length, frequency) -> {
             System.out.println("Length: " + length + ", Frequency: " + frequency);
