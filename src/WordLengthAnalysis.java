@@ -10,7 +10,7 @@ import java.util.concurrent.ForkJoinPool;
 public class WordLengthAnalysis {
     public static void main(String[] args) {
 //        String text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.";
-        String fileName = "C:\\Users\\mrkru\\lab3\\src\\file.txt";
+        String fileName = "C:\\Users\\mrkru\\lab3\\src\\file3.txt";
         String fileName2 = "C:\\Users\\mrkru\\lab3\\src\\file2.txt";
         String text1 = readFileAsString(fileName);
         String text2 = readFileAsString(fileName2);
